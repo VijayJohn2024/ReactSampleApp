@@ -1,0 +1,309 @@
+Desing pattern:
+
+
+Oops:               
+
+oops is a concept and it help us to organize the programs around objects and the datas.
+
+oops allows decomposing the problems or operation into many entities.
+
+the class is the core of object oriented programming languages.
+
+it has properties, variables and methods and it defines the data how should it be stored, processed and modified.
+
+it only the logical representation of the data and it won't occupy memory.
+
+the object is created using class intance so it calls intance of the classs and it helps to perform operation on the data. so it calls the real world entities.
+it will occupy memory. creating object using new key word the memory will be allocated for this object in heap.
+
+
+ 
+ abstraction:
+ 
+ abstraction is used for provide common functionality to all derived class. and can't be create instance. and it is partial abtract class
+ abstract class can have abract method (without implimentation) and concret method (with implimentation). Abstract class is created using abstract key.
+ It can have fields,methods and constructor.
+ it can have accessmodifiers.
+ it allows single inheritance. like a class can inherite only one abstrace class
+ 
+ inheritance:
+ 
+ inheritance:
+ It help to create a set of method without implimentation and make a contract to all derived class must provide implimentation for its methods. and it is a pure abstract class
+ Its all methods only abstract methods and recent version the inheritance can have a default concreat method.
+ it don't have a fields and constructor.
+ and it don't have accessmodifiers. Here all methods are default public.
+ it is allow muliple inheritance. a class can implimente multiple inheritance.
+ it manage code fexibility. we can easily manage and update.
+ 
+ 
+ -----------------------------------------------------------------
+ 
+ excapsulation:
+ 
+ excapsulation hiding internal implimentation of an object to other object.
+ it make data security by blocking direct access uses to data.
+ it encapsulate the data by creating  fields are as private and exposes controlled access creating public properties or public methods to access private fields.
+ object are used without know its internal implimentation.
+
+--------------------------------------------------------------------
+Polymorpism:
+
+poplymorphism mean one name in many form. like one method can have different behaviours. 
+
+There are two types of polymorpism complie time polymorpism and run time polymorpism:
+
+complie time polymorpism called method overloading.same method name with different parameter with in a class.It is created at complie time
+
+run time polymorpism: called method overriding same method  name and same parameter in all derived classes.it is created at run time.
+
+--------------------------------------------------------------------------------------------------
+
+inheritance:
+
+Inheritance allows child class to inherite base class properties and behaviours.
+it useful to code reusalbility and maintainability and reduce reduntance.
+base class provide common behaviours.
+derived class can extend based class and overried the methods.
+It helps to create a sustainability structure hierarichy.
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Access Modifier:
+it is useful to set the access availablity to fields, methods and properties and class.
+public: 
+ No ristriction, We can access this from anywhere.
+ 
+private:
+   we can access only within a class
+   
+Product:
+    We can access only with in a classs and derived classs.
+
+Internal:
+   we can access it only with in a same assembly like same project.
+
+product internal : we can access it with in the same assembly anywhere and can access in a class of another assembly but it must be inherted that assembly.
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Enums:
+Enums represent a group of distinct constance value.
+
+It has underlying types and the default underlying type is int. 
+the starting default value of the set of enum is 0 and the rest of the value are incremented by 1 from previous value.
+
+when we use:
+
+if you want to use the fixex set of constance value to code readablity, maintainability and type safety and use constance value instead of string. to reduce typos.
+
+redability:
+as can modified the underlying type. you assign set a proper name and int in enums to make readablity.
+
+type safety:
+it prevend invalid values
+
+reduce typos:
+you want to you same string value to many area it lead to typos so Enums as a fixed distinct constance value it help to reduce typos.
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ref and out:
+
+ref and out used for similar purpose both are passed arguments by reference to a method rather than value any changes is made to the variable inside in method it will affect the original variable. but the differents are:
+
+ref is must be initialized before passing the value as argument to method.
+the argument passed by reference with mentioning Ref key.
+Ref key is used to modidfy the value within the method as it is preserve the value. but it is not required.
+
+out:
+When want to use out-type data and returing multiple values.
+For out key the variable not must be initialized before passing it to a method as argument.
+but the  method  must be assign  a value to the method before returing the value.
+We can modidfy the variable instead of this we can update the variable as it doesn't preserve the value.
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+IEnumerable and IQueryable:
+IEnumerable:
+IEnumerable is an interface it represent a collection and means it can be iterate using for each loop.
+IEnumerable allows read only access over a collection, It has a method GetIEnumerator and it return IEnumerator interface.
+it has MoveNext() to move the enumerator current to next element if the element exist. and ReSet() to move the enumerator at initial position.
+For IEnumerable type the data is fetched only when it iterated.
+IENumertor is useful for in-memory collection like list,array and dictonary.
+for db access It is fetched all data and then starting filtering in in-memory.
+so the processing time is more tahn IQueryable
+we can use where, any.
+
+IQueryable:
+It also similar, but it is mainly used for query the data in db.
+it allows to query the data. It fetched the filtered data menas the filtering is done at db level.
+so the processing time is less than IEnumerable.
+we can use where, any.
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Static,Readonly and const:
+
+Static:
+Static is belongs to class so it is not instance.
+we can assigne static key for fields ,properties and methods.
+for static field can be assigned a value at the declaration time or via static constructor.
+as a part of the class , we can access static members using its own class name.
+Static constructore is used for initializind to static variables.
+static constructore is call at only one before the first object of class is created.
+
+
+Readonly vs const:
+Both are used to define constant field that are unchangable but the different is the way on initialization.
+Readonly:
+it is similar to const, the different is the way of inizializing. 
+Readonly is run at the compile time, we can set the value at the declaration time or via constructor. 
+it can be only modidfy via constructor and not via methods.
+
+const:
+it should be assign with value while declaration time and once it is assign with value then I can't be changed.
+implicitly is static type so it is a part of the class and can not access through instance variable. 
+it runs at compile time,so it is not tied to any object.
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Difference between value types and reference type:
+
+value type is stored in stack memory whereas ref types stored in heap memory.
+value type are like int, boolean,etc. and ref type example object, array,etc.
+
+for example if you assign a value type variable to another var the value is passed. it means the any one of both variable value is changed it won't affect another var.
+but refrence type we can take the same scenario if changed any of both variable is changed it affect another variable that is used to assign as well.
+
+stack is used for small amount of data as well as immutable data where the profomance is priority.
+
+ heap is used for handling complex object to share data across many places by reference.
+ 
+ Stack                 Heap
+    
+ Generaly fast         To allocate it takes more time
+ cannot be null|       Can null
+ unless made nullabe
+ copies the value       copies the reference
+ +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ What is nullable:
+ 
+ *C# compiler won't allow you to assign null value to a variable
+ In C#-2.0 feature allow us to assigne null value to a variable. using  nullable type for only value type.
+ In C# -8.0 feature allows us to assigne null value to object type as well.
+ +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 
+ Boxing and unboxing:
+ 
+ C# allows boxing and unboxing like data conversion primitive type convert into referenceh type and vise versa.
+ primitive type are inherits object type. so the conversion works.
+Boxing:
+ Primitive type is converted into reference type it is called boxing.
+ it is also called implicity conversion reason the conversion happend automatically.
+ 
+ unboxing:
+  The refrence type is converted into primitive type it is called unboxing.
+  it is also called explicity coversion reasong it should be converted manually using type.
+  
+ we should avoid using boxing and unboxing, because while boxing the data moves from stack to heap whereas for unboxing type checking is needed.
+ so it reduce the performance.
+ +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 
+ Var:
+ 
+ var key is used when we accessing the data which we dont know data type.
+ var is implicitly type so its type is defined at compile time. once the type is assined we can't change the type again.
+ so we should assign a value at declaration time.
+ it is used complex object type and in for each which iterate the list that hole mulitiple types and etc.
+ we should avoid explicity type variable like we know the data type for the value we should use the compactiple type.
+ 
+ Dynamic:
+ 
+ Dynamic key is also a bit similar to var.
+ however its type is defined at run time.
+ so once its type is  assigned we can change the type at anytime.it won't throw errror.
+ 
+ +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Properties:
+
+Properties is a class menmeber and is used to exposs the class private fields. it is a special method.
+and also called as a controlled accessor.
+It has two accessor:
+ set accessor or setter
+ get accessor or getter
+ 
+it is used to encapsulate the data. 
+set is used to set the value to a property value and get to use to retrive the value from a property value.here value type is represent the private file value.
+
+property has all access modifier. 
+and it can be created as static property so it can encapsulate the static fields.
+property can be created as polymorpism so the proper can be inherted by derived classes and override.
+property can be created as abstract property so it can be implimented in dervied classes.
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Using Keyword:
+
+Using key word is used at two different types:
+
+One is for namespace
+and the other is for automatic resource management. it relase the resource to process the operation and it is inherit IDisposable interface.
+so once the operation is finished it automatically dispose the resource.
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Indexer:
+
+It is called as small array. It is a class member. It it allow us to acess the member grouped variable of a class.
+It enables an object to perform like an array.
+
+
+<Identifier> <return type> this [argument list]
+{
+get{ []}
+set{[]}
+}
+
+Inxex is created using this key word.
+parameterized properties are called indexer
+indexer is implimented by get and setter operator with [] oeprator
+Indexer is instance member so it can't be static
+Indexer is used on group of element
+indexer is identified by its signature
+Indexer is accessed using indexer
+Indexer can be overload.
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+ "==" and equals():
+ 
+ both are perform same operation for validating two value types or reference types.
+ 
+ but the diffrence is how it validate the values:
+ 
+ the equal operator validate the value based on reference identifier mean memory address.
+ the equals() operator validate the values based on content live value.
+ 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Extension method:
+
+Extension method is a static method of static classs where this key is the first parameter. the first type of parameter will be the type of this exteneded method.
+Extension method allow you to extend the existing class without relying on inheritance or core changes of the code.
+Extension method shout be interited in a top level of the static class.
+The extension method won't work in override methods.
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Anonymous method:
+
+Anonymous it means it doesn't have method name and it has only body. It is used in delegate method.
+if you dont want to create a sperate method use can use anonymous method to delegate method.
+
+delegate int data(int num1,int num2);
+
+data = delegate (4,10){
+}
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Lambda expression:
+
+Lambda expression is a shorthend syndax for anonymous method declaration.
+Lambda is used to create delegates and expression tree. I primarly used to linque query to filter the data in concise way.
+
+Concise: as has a shorthend syndax it expose teh compact syntax for writing methods instead of create a broadest full method signature.
+Redability: While using linq query it expose the better readablity.
+fuctionality programming : it allow the functional programming like map, filter,reduce.
+delegate and event handler: it is used in create delegate and event handling.
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
