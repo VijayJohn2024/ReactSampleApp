@@ -381,3 +381,30 @@ Late binding:
   The mothods and properties is resolved at run-time.
   SO here the performance is slow compare thatn early binding.
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Micro services:
+
+Which is a design pattern that divide the large scale application into collection of small services.
+Each services is responsible for seperate bussinus fuctions. each services will work on indepently.
+Each services can have it own databse.
+It enable the scalbility of the services. 
+Each service can be built using different technologies.
+these all are communicating via Http/REST Api or message queue.
+It is used for large scale application, complext application.
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+different api optimization techniques?
+
+I wrote the partial answer here for interview purpose to manage the time.
+
+Cache:
+ we can use cache, To improve perfomance. Insteal of fetch data from the db every time, we can use cache to fect the data frequent access.
+
+Pagination:
+  Pagination help to divide the data load. instad of fetch all the data at once.
+
+Optimize the query:
+  Use asynchronous query for muliple db call. which help to perfom the all task simultaniously.
+
+Implement async/await function to make the perfomance better.
+
+Use backend job like schedular, for long-running process, which helps to  get imidiate response without processing the data and it can process the data later.
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
