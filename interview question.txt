@@ -28,13 +28,13 @@ it will occupy memory. creating object using new key word the memory will be all
  
  inheritance:
  
- inheritance:
+ interface:
  It help to create a set of method without implimentation and make a contract to all derived class must provide implimentation for its methods. and it is a pure abstract class
- Its all methods only abstract methods and recent version the inheritance can have a default concreat method.
+ Its all methods only abstract methods and recent version the interface can have a default concreat method.
  it don't have a fields and constructor.
  and it don't have accessmodifiers. Here all methods are default public.
- it is allow muliple inheritance. a class can implimente multiple inheritance.
- it manage code fexibility. we can easily manage and update.
+ it is allow muliple interface. a class can implimente multiple interface, so it manage code fexibility.
+ we can easily manage and update.
  
  
  -----------------------------------------------------------------
@@ -44,7 +44,7 @@ it will occupy memory. creating object using new key word the memory will be all
  excapsulation hiding internal implimentation of an object to other object.
  it make data security by blocking direct access uses to data.
  it encapsulate the data by creating  fields are as private and exposes controlled access creating public properties or public methods to access private fields.
- object are used without know its internal implimentation.
+ objects are used without know its internal implimentation.
 
 --------------------------------------------------------------------
 Polymorpism:
@@ -77,7 +77,7 @@ private:
    we can access only within a class
    
 Product:
-    We can access only with in a classs and derived classs.
+    We can access  with in a classs and derived classs as well.
 
 Internal:
    we can access it only with in a same assembly like same project.
@@ -93,7 +93,7 @@ the starting default value of the set of enum is 0 and the rest of the value are
 
 when we use:
 
-if you want to use the fixex set of constance value to code readablity, maintainability and type safety and use constance value instead of string. to reduce typos.
+if you want to use the fixed set of constance value to code readablity, maintainability and type safety and use constance value instead of string. to reduce typos.
 
 redability:
 as can modified the underlying type. you assign set a proper name and int in enums to make readablity.
@@ -107,16 +107,18 @@ you want to you same string value to many area it lead to typos so Enums as a fi
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Ref and out:
 
-ref and out used for similar purpose both are passed arguments by reference to a method rather than value any changes is made to the variable inside in method it will affect the original variable. but the differents are:
+ref and out used for similar purpose both are passed arguments by reference to a method rather than value any changes are made to the variable inside in method it will affect the original variable.
+
+but the differents are:
 
 ref is must be initialized before passing the value as argument to method.
 the argument passed by reference with mentioning Ref key.
-Ref key is used to modidfy the value within the method as it is preserve the value. but it is not required.
+Ref key is used to update the value within the method as it is preserve the value.
 
 out:
 When want to use out-type data and returing multiple values.
 For out key the variable not must be initialized before passing it to a method as argument.
-but the  method  must be assign  a value to the method before returing the value.
+but the  method  must be assign  a value to the out param before returing the value.
 We can modidfy the variable instead of this we can update the variable as it doesn't preserve the value.
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -143,25 +145,25 @@ we can use where, any.
 Static,Readonly and const:
 
 Static:
-Static is belongs to class so it is not instance.
+Static is belongs to class so it is not instance. it is save memory as doesn't allow multiple inheritance. only one copy of the class is created in memory.
+Static is used for create the global factilities like utilities,Configuration and constance. 
 we can assigne static key for fields ,properties and methods.
 for static field can be assigned a value at the declaration time or via static constructor.
 as a part of the class , we can access static members using its own class name.
 Static constructore is used for initializind to static variables.
-static constructore is call at only one before the first object of class is created.
+static constructore is call at only one before the first object of class is created or the first static field is accessed.
 
 
 Readonly vs const:
 Both are used to define constant field that are unchangable but the different is the way on initialization.
 Readonly:
-it is similar to const, the different is the way of inizializing. 
 Readonly is run at the compile time, we can set the value at the declaration time or via constructor. 
 it can be only modidfy via constructor and not via methods.
 
 const:
 it should be assign with value while declaration time and once it is assign with value then I can't be changed.
-implicitly is static type so it is a part of the class and can not access through instance variable. 
-it runs at compile time,so it is not tied to any object.
+implicitly is static type so it is a part of the class and can not access through instance variable.so it is not tied to any object.
+it runs at compile time,
 
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Difference between value types and reference type:
@@ -212,13 +214,20 @@ Boxing:
  var is implicitly type so its type is defined at compile time. once the type is assined we can't change the type again.
  so we should assign a value at declaration time.
  it is used complex object type and in for each which iterate the list that hole mulitiple types and etc.
- we should avoid explicity type variable like we know the data type for the value we should use the compactiple type.
+ we should avoid implicity type variable if we know the data type for the value we should use the compactiple type.
+ it is faster because of the type will be known as compiling time.
  
  Dynamic:
  
  Dynamic key is also a bit similar to var.
  however its type is defined at run time.
  so once its type is  assigned we can change the type at anytime.it won't throw errror.
+ example: JsonData access and reflection type
+ it is slower as it need the type checking
+ 
+ Object:
+  object is used for dynamic type access but the type casting is required to perfomance operation.
+  It is very slower than dynamic and var as it need the type checking and cating.
  
  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Properties:
@@ -267,7 +276,7 @@ indexer is identified by its signature
 Indexer is accessed using indexer
 Indexer can be overload.
 
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
  "==" and equals():
  
  both are perform same operation for validating two value types or reference types.
@@ -277,7 +286,7 @@ Indexer can be overload.
  the equal operator validate the value based on reference identifier mean memory address.
  the equals() operator validate the values based on content live value.
  
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Extension method:
 
 Extension method is a static method of static classs where this key is the first parameter. the first type of parameter will be the type of this exteneded method.
@@ -285,7 +294,7 @@ Extension method allow you to extend the existing class without relying on inher
 Extension method shout be interited in a top level of the static class.
 The extension method won't work in override methods.
 
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Anonymous method:
 
 Anonymous it means it doesn't have method name and it has only body. It is used in delegate method.
@@ -295,7 +304,7 @@ delegate int data(int num1,int num2);
 
 data = delegate (4,10){
 }
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 Lambda expression:
 
@@ -306,4 +315,69 @@ Concise: as has a shorthend syndax it expose teh compact syntax for writing meth
 Redability: While using linq query it expose the better readablity.
 fuctionality programming : it allow the functional programming like map, filter,reduce.
 delegate and event handler: it is used in create delegate and event handling.
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Struct and class:             
+
+struct :                                                                    Class:
+it is a value type,  it is stored in stack memory                     It is reference type and it is stored in heap memory
+It doesn't have the default constructor                               it has.
+It creats a new copy for assinging the value                          it assined a value by reference
+it can't be inheritated the struct to another struct or class.        It allow inheritance,
+it bese for small, lightweight and immutable data   	              It is best for hanlde complex object type. like hanlding classes.  
+The perfomance is fast as it is stored in stack.                      The performance is slow as it is handling the complext type object
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++Aasync/await and task:
+
+Async and await enable the asynchronous programming in c#. it allows the task to run without blocking the main thread.
+the await key pause the execusion untill the awaited task complete and allow the other operation to run simultaniously letting the main thread to move another operation.
+the async key declare the method as a asynchronous method, and expect the return type as task, void.
+when the task is completed the execution resums from where it is left off.
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Dependency injection:
+It is a software design pattern,It help to enbale the loos coupling between the component controller and service and services and repositories for perfomance and maitaing the componend dependent.it letting down the dependent between component.
+It create the object istance based on the configuration, which are Signletone, scoped and trancisent.
+in the sigleton configuration, the same instance is used throughout the application.
+in the scoped, new instance is used every request. like http request.
+the trancisent, new instance is used whenever it is requested.
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Middleware:
+Middleware Is used to acess the http request and response.
+Middleware execute in the pipeline and each middleware can modify the requset before it is passing to the next middleware or app.
+Each middleware can process the response before it passing to the client.
+
+For example authentication and authorization. allow the reqeust by validating the reqeust.
+Global Custome middleware. I used these both in my recent application. Custom middleware to process the exception and set the valid exception to the response before it passing to the client.
+I used token validation middleware, That project has private and public api. The middleware check the token in requst header for private api.
+if it exist and it is valide, it allow the request to further process and if not is deny the request and return it to the client with valid response unothrized user. 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Async task, async void and Task.Run():
+
+Async task:
+It is used to asynchronous method that return taks.
+allow await to pause the excution.
+
+async void:
+it is used to asynchronous method but that return nothing.
+It is used for event handling.
+Not need to use await.
+
+Task.Run():
+Which is used to run the code in seperate thread from the main thread.
+It can be used for heavy colculation for perfomance improvement.
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Early binding and late binding:
+
+Both are represent the object assinging. 
+
+Early binding:
+  The compiler know the object exact type,like using the strongly typed object like class interface.
+  So the knows the what kind of object it is and what kind of methods and poroperties holds.
+  The method is resolve at complietime so it performance will be better.
+  
+Late binding:
+  The compiler doesn't know the object exact type and it is resolve at run time.
+  for assinging dynamic type.and also involve the virual method. 
+  The mothods and properties is resolved at run-time.
+  SO here the performance is slow compare thatn early binding.
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
