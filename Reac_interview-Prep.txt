@@ -1,0 +1,50 @@
+React:
+
+What is React?
+
+React is a javascript library, used for creating fast and interacting UI.
+It is a single page application.
+Developed and maintained by Facebook.
+
+Why do we use it?
+
+React bracking the UI into small resuable components.
+It support virutal dom, Only make the changes in changed part of the Real dom To imporve performance.
+It maintained by facebook,so it ensure the upgrades.
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+What is JSX:
+
+It is syntax extension for javascript. it maks the creating of html element combine with javascript function. 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Class and Fucntional components
+
+Class components (older approach):
+
+Class coponent is create by extending react.component.
+It binding the data using this key.
+
+Functional components (morden approach):
+
+It is created using  react.fuction component. 
+It is simple, lightweigh component and make redability easly.
+It support hooks which instroduce for ovecome the class commponent lifecycle drawbacks and maitain the state.
+it is easy to create.
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Redux:
+
+Redux is used to handle the global state. make access to all components instead of using props drilling.
+It is used to maitain the predictable state as it follow the strict state management struct.
+It keep the all states in single store.
+
+The store is created using createStore instance. and is has the reducer method which is used to update the state.
+And the action param represent the requested data.
+
+Is has the provided componen that make the state availability to all the components that are all mentioned within the provided component
+
+TO access the state in another component, the redux provide the useSelector and useDispath method.
+useSelector is used to read the state. 
+useDispath is used to pass the data to reducer to update the state.
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
